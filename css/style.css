@@ -1,0 +1,18 @@
+.menu {
+    margin-left: -100px;
+}
+.konten1 {
+    margin-top: 100;
+    margin-left: 80;
+}
+.putih {
+    color: cornsilk;
+}
+.objek1 {
+    background-color: blueviolet;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 3000px;
+    border-bottom-left-radius: 1000px;
+}
+
