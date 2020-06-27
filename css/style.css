@@ -20,6 +20,13 @@ h2 {
     color: darkorange;
 }
 
+.text-color-orange{
+    color: darkorange;
+}
+.text-color-white{
+    color: #fff;
+}
+
 p {
   font-size: 1.15rem;
   color: #000;
@@ -70,7 +77,9 @@ p {
 }
 .navbar-brand{
     color: #fff;
+    padding: 15px 0;
 }
+
 
 
 .banner {
@@ -78,7 +87,7 @@ p {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: url(https://mulaitech.com/finalproject/images/jumbotron.jpg);
+  background: url(https://mulaitech.com/finalproject/images/jumbotron-home.jpg);
   background-size: cover;
   margin-bottom: 0;
 }
@@ -92,8 +101,8 @@ p {
   left: 0;
   width: 100%;
   height: 400px;
-  background: linear-gradient(#000, transparent);
-}
+  background: linear-gradient(#fff, transparent);
+} */
 
 .banner:after {
   content: "";
@@ -103,7 +112,7 @@ p {
   width: 100%;
   height: 400px;
   background: linear-gradient(360deg, #000, transparent);
-} */
+}
 
 .height100p {
   height: 100vh;
