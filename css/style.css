@@ -1,18 +1,277 @@
-.menu {
-    margin-left: -100px;
-}
-.konten1 {
-    margin-top: 100;
-    margin-left: 80;
-}
-.putih {
-    color: cornsilk;
-}
-.objek1 {
-    background-color: blueviolet;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 3000px;
-    border-bottom-left-radius: 1000px;
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap");
+
+* {
+  outline: none !important;
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: relative;
+  z-index: 10000;
+}
+
+/* warna font */
+
+h2 {
+    color: darkorange;
+}
+
+p {
+  font-size: 1.15rem;
+  color: #000;
+}
+
+.navbar {
+  background: transparent !important;
+  transition: 0.5s;
+}
+
+.navbar.scrolled {
+  background: #fff !important;
+  transition: 0.5s;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #000;
+  background: #fff;
+}
+
+.navbar-light .navbar-nav .active > .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active:hover,
+.navbar-light .navbar-nav .nav-link.show:hover,
+.navbar-light .navbar-nav .show > .nav-link:hover {
+  color: #000;
+}
+
+.navbar-light .navbar-nav .active > .nav-link:hover {
+  color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover {
+  color: rgba(255, 255, 255, 1);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.navbar-brand{
+    color: #fff;
+}
+
+
+.banner {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(https://mulaitech.com/finalproject/images/jumbotron.jpg);
+  background-size: cover;
+  margin-bottom: 0;
+}
+
+/* efek shadow pada banner */
+
+/* .banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(#000, transparent);
+}
+
+.banner:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(360deg, #000, transparent);
+} */
+
+.height100p {
+  height: 100vh;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.contentBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  z-index: 10;
+}
+
+.contentBox h1 {
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+
+.contentBox p {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.btnD1 {
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50px;
+  padding: 15px 50px;
+  font-size: 1.15rem;
+  outline: none;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: 0.65s;
+}
+
+.btnD1:hover {
+  background: #fff;
+  color: #000;
+}
+
+.sec1 {
+  padding: 100px 0;
+  background: #fff;
+}
+.headerText {
+  color: #fff;
+}
+.headerText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.placeBox {
+  position: relative;
+  max-width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background: #000;
+  margin-top: 30px;
+}
+
+.placeBox .imgBox {
+  width: 100%;
+  height: 100%;
+}
+
+.placeBox .imgBox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.placeBox .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+  display: flex;
+  justify-content: baseline;
+  align-items: flex-end;
+}
+
+.placeBox .content h3 {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  width: 60%;
+}
+
+.placeBox .content h3 span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-light .navbar-toggler {
+    background: #fff;
+    border-radius: 0;
+  }
+  .banner {
+    min-height: 100vh;
+    padding: 100px 0;
+  }
+  .contentBox h1 {
+    font-size: 3rem;
+  }
+  
+  .btnD1 {
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 35px;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: 0.65s;
+}
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  
+  .sec1 {
+    padding: 20px 0;
+  }
+  .headerText h2 {
+    font-size: 2rem;
+  }
+  .blog {
+    padding: 20px 0;
+  }
+  .blogpost .imgBox {
+    height: 200px;
+  }
+  .contact {
+    padding: 20px 0;
+  }
+  .contact .form-control {
+    height: 40px;
+  }
+  footer {
+    background: #000;
+    padding: 0 16px 20px;
+  }
+  .sci li {
+    margin: 0 10px;
+  }
+  .sci li a {
+    font-size: 1.5rem;
+  }
+}
