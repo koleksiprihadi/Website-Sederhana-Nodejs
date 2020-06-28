@@ -103,7 +103,7 @@ p {
 
 /* efek shadow pada banner */
 
-.banner-home:before {
+/* .banner-home:before {
   content: "";
   position: absolute;
   top: 0;
@@ -111,7 +111,7 @@ p {
   width: 100%;
   height: 100px;
   background: linear-gradient(#fff, transparent);
-}
+} */
 
 .banner-home:after {
   content: "";
