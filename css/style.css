@@ -81,8 +81,8 @@ p {
 }
 
 
-
-.banner {
+/* Gambar jumbotron */
+.banner-home {  /*gambar jumbotron homepage/ index.html */
   position: relative;
   top: 0;
   width: 100%;
@@ -91,20 +91,38 @@ p {
   background-size: cover;
   margin-bottom: 0;
 }
+.banner-reservasi { /*gambar jumbotron reservationpage/ reservasi.html */
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(https://mulaitech.com/finalproject/images/jumbotron-reservasi.jpg);
+  background-size: cover;
+  margin-bottom: 0;
+}
 
 /* efek shadow pada banner */
 
-/* .banner:before {
+.banner-home:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 400px;
+  height: 100px;
   background: linear-gradient(#fff, transparent);
-} */
+}
 
-.banner:after {
+.banner-home:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(360deg, #000, transparent);
+}
+.banner-reservasi:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -219,6 +237,27 @@ p {
   font-weight: 500;
 }
 
+/* warna tambahan */
+.warna-gelap {
+  background-color: #333333;
+  height: 230px;
+  width: 350px;
+}
+.bg-color-blue {
+  background-color: #E1F4F3;
+}
+
+/* Form */
+.judul-form {
+  height: auto;
+  width: auto;
+  background-color: #333333;
+}
+.border-form {
+  border-color: #333333;
+  border-style: solid;
+}
+
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -283,4 +322,11 @@ p {
   .sci li a {
     font-size: 1.5rem;
   }
+}
+.footer {
+  position: absolute;
+  bottom: 0px;
+}
+.footer-color {
+  background-color: #333333;
 }
