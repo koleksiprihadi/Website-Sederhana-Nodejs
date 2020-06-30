@@ -13,6 +13,9 @@ penambahan template pada reservasi.html
 ### commit kelima
 perbaikan collapse menu
 
+### commit keenam
+masalah pada angularjs manual
+
 
 ### include
 1. Bootstrap 4
