@@ -7,6 +7,7 @@ var mysql = require('mysql');
 var view = __dirname + "/views/";
 var public = __dirname + "/public/";
 
+
 var connection=mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -30,22 +31,28 @@ app.get('/',(req, res) => {
     res.render('index', {       
     });
 });
-
+//menampilkan menu
 app.get('/menu',(req, res) => {
     res.render('menu', {       
     });
 });
-
+//menampilkan staff
+app.get('/staff',(req, res) => {
+    res.render('staff', {       
+    });
+});
+//menampilkan menu reservasi
 app.get('/reservasi',(req, res) => {
     res.render('reservasi', {       
     });
 });
+// menampilkan halaman thanks
 app.get('/thanks',(req, res) => {
     res.render('thanks', {       
     });
 });
+//menampilkan halaman karyawan
 app.get('/karyawan',(req, res) => {
-    // res.send('CRUD Operation using NodeJS / ExpressJS / MySQL');
     let sql = "SELECT * FROM karyawan";
     let query = connection.query(sql, (err, rows) => {
         if(err) throw err;

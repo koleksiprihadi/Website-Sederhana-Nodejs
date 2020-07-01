@@ -102,6 +102,15 @@ p {
   background-size: cover;
   margin-bottom: 0;
 }
+.banner-staff {  /*gambar jumbotron staff/ staff.html */
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(https://mulaitech.com/finalproject/images/jumbotron-staff.jpg);
+  background-size: cover;
+  margin-bottom: 0;
+}
 .banner-reservasi { /*gambar jumbotron reservationpage/ reservasi.html */
   position: relative;
   top: 0;
@@ -111,7 +120,8 @@ p {
   background-size: cover;
   margin-bottom: 0;
 }
-.banner-thanks {  /*gambar jumbotron homepage/ thanks.html */
+/* yang dicopy setelah titik sampai sebelum { ya fer */
+.banner-thanks {  /*gambar jumbotron homepage/ thanks.html ini di copy fer (banner-thanks) */
   position: relative;
   top: 0;
   width: 100%;
@@ -121,6 +131,17 @@ p {
   margin-bottom: 0;
 }
 
+/* video */
+.video {
+  z-index: -1;
+}
+.text-video {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
 /* efek shadow pada banner */
 
 /* .banner-home:before {
