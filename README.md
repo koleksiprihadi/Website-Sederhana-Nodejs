@@ -18,6 +18,9 @@ masalah pada angularjs manual
 ### commit ketujuh 
 finishing
 
+### commit kedelapan
+pemisahan header dan footer dari setiap halaman
+
 ## include
 1. nodejs
 2. expressjs
