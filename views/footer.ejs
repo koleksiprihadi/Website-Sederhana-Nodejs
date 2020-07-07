@@ -1,0 +1,33 @@
+<footer class="footer-color">
+    <div class="container">
+      <center>
+        <h1 class="text-color-white">CONTACT US</h1>
+        <br> <br> <br>
+        <div class="row">
+          <div>
+            <img src="images/call-logo.png" alt="" height="40">
+          </div>
+          <div>
+            <h3 class="text-color-white">+555-555-555</h3>
+          </div>
+        </div>
+      </center>
+      <br> <br>
+      <div>
+        <center>
+          <p class="text-color-white">Jl. Malioboro No.52-58, Suryatmajan, Kec. Danurejan, Kota Yogyakarta, 
+            <br>Daerah Istimewa Yogyakarta 55213</p>
+        </center>
+      </div>
+    </div>
+  </footer>
+  <script>
+    $(document).scroll(function() {
+        $(".navbar").toggleClass(
+            "scrolled",
+            $(this).scrollTop() > $(".navbar").height()
+         );
+    });
+    new WOW().init();
+  </script>        
+</body>

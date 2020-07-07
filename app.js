@@ -28,22 +28,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // menampilkan homepage
 app.get('/',(req, res) => {
-    res.render('index', {       
+    res.render('index', { 
+        title : 'Home'      
     });
 });
 //menampilkan menu
 app.get('/menu',(req, res) => {
-    res.render('menu', {       
+    res.render('menu', {  
+        title : 'Menu'     
     });
 });
 //menampilkan staff
 app.get('/staff',(req, res) => {
-    res.render('staff', {       
+    res.render('staff', {  
+        title : 'Staff'     
     });
 });
 //menampilkan menu reservasi
 app.get('/reservasi',(req, res) => {
-    res.render('reservasi', {       
+    res.render('reservasi', { 
+        title : 'Reservasi'      
     });
 });
 // menampilkan halaman thanks
