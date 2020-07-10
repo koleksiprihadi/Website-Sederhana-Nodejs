@@ -10,9 +10,9 @@ var public = __dirname + "/public/";
 
 var connection=mysql.createConnection({
     host:'localhost',
-    user:'root',
-    password:'',
-    database:'restaurant'
+    user:'sandarsc_krisna',
+    password:'krisna7102000-',
+    database:'sandarsc_restaurant'
 });
 
 connection.connect(function(error){
@@ -51,6 +51,61 @@ app.get('/krisna-prihadiyanto',(req, res) => {
         if(err) throw err;
         res.render('staff1', {
             title : 'Detail Staff - krisna prihadiyanto',
+            staff : rows
+        });
+    });
+});
+app.get('/muhammad-akmal',(req, res) => {
+    const userId = '18112412';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - 	Muhammad Akmal A W',
+            staff : rows
+        });
+    });
+});
+app.get('/riko-aditiya',(req, res) => {
+    const userId = '18112392';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - Riko Aditiya N',
+            staff : rows
+        });
+    });
+});
+app.get('/sintiya-aprili-yanti',(req, res) => {
+    const userId = '18112440';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - Sintiya Aprili Yanti',
+            staff : rows
+        });
+    });
+});
+app.get('/chairunisa-nur-afifa',(req, res) => {
+    const userId = '18112448';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - Ikram Ihamadi Ferdin',
+            staff : rows
+        });
+    });
+});
+app.get('/ikram-ihamadi-ferdinan',(req, res) => {
+    const userId = '18112390';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - Ikram Ihamadi Ferdin',
             staff : rows
         });
     });
