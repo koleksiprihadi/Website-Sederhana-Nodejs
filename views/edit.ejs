@@ -1,0 +1,40 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2><%= title %></h2>
+  <form action="/update" method="post">
+    <input type="hidden" value="<%= user.nim %>" name="id">
+    <div class="form-group">
+      <label for="nim">Nim:</label>
+      <input type="number" class="form-control" id="email" placeholder="nim tanpa titik" value="<%= user.nim %>" name="nim" required>
+    </div>
+    <div class="form-group">
+      <label for="nama">Nama:</label>
+      <input type="text" class="form-control" id="email" placeholder="masukan nama" value="<%= user.nama %>" name="nama" required>
+    </div>
+    <div class="form-group">
+      <label for="jobdesk">jobdesk:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="masukan jobdesk" value="<%= user.jobdesk %>" name="jobdesk" required>
+    </div>
+    <div class="form-group">
+        <label for="instagram">instagram:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="masukan instagram" value="<%= user.instagram %>" name="instagram" required>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

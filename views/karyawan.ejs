@@ -43,15 +43,22 @@
   <table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th>Nama</th>
         <th>Nim</th>
+        <th>Nama</th>
+        <th>Jobdesk</th>
+        <th>instagram</th>
       </tr>
     </thead>
     <tbody>
-        <% karyawan.forEach(function(karyawan){ %>
+        <% user.forEach(function(user){ %>
             <tr>
-                <td><%= karyawan.username %></td>
-                <td><%= karyawan.PASS %></td>
+                <td><%= user.nim %></td>
+                <td><%= user.nama %></td>
+                <td><%= user.jobdesk %></td>
+                <td><%= user.instagram %></td>
+                <td>
+                  <a href="edit/<%= user.nim %>" class="btn btn-sm btn-primary">Edit</a>
+              </td>
             </tr>
         <% }); %>
     </tbody>

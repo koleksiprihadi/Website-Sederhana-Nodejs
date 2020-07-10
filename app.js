@@ -44,6 +44,17 @@ app.get('/staff',(req, res) => {
         title : 'Staff'     
     });
 });
+app.get('/krisna-prihadiyanto',(req, res) => {
+    const userId = '18112435';
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, rows) => {
+        if(err) throw err;
+        res.render('staff1', {
+            title : 'Detail Staff - krisna prihadiyanto',
+            staff : rows
+        });
+    });
+});
 //menampilkan menu reservasi
 app.get('/reservasi',(req, res) => {
     res.render('reservasi', { 
@@ -57,11 +68,11 @@ app.get('/thanks',(req, res) => {
 });
 //menampilkan halaman karyawan
 app.get('/karyawan',(req, res) => {
-    let sql = "SELECT * FROM karyawan";
+    let sql = "SELECT * FROM staff";
     let query = connection.query(sql, (err, rows) => {
         if(err) throw err;
         res.render('karyawan', {
-            karyawan : rows
+            user : rows
             
         });
     });
@@ -98,8 +109,27 @@ app.get('/delete/:id',(req, res) => {
         res.redirect('/admin');
     });
 });
+app.get('/edit/:nim',(req, res) => {
+    const userId = req.params.nim;
+    let sql = `Select * from staff where nim = ${userId}`;
+    let query = connection.query(sql,(err, result) => {
+        if(err) throw err;
+        res.render('edit', {
+            title : 'edit profil',
+            user : result[0]
+        });
+    });
+});
 
 
+app.post('/update',(req, res) => {
+    const userId = req.body.nim;
+    let sql = "update staff SET nim='"+req.body.nim+"',  nama='"+req.body.nama+"',  jobdesk='"+req.body.jobdesk+"',  instagram='"+req.body.instagram+"' where nim ="+userId;
+    let query = connection.query(sql,(err, results) => {
+      if(err) throw err;
+      res.redirect('/karyawan');
+    });
+});
 
 
 app.use('/', express.static(public));
