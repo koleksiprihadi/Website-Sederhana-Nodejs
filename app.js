@@ -10,9 +10,9 @@ var public = __dirname + "/public/";
 
 var connection=mysql.createConnection({
     host:'localhost',
-    user:'sandarsc_krisna',
-    password:'krisna7102000-',
-    database:'sandarsc_restaurant'
+    user:'root',
+    password:'',
+    database:'restaurant'
 });
 
 connection.connect(function(error){
