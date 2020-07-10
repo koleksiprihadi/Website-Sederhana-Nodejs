@@ -21,6 +21,9 @@ finishing
 ### commit kedelapan
 pemisahan header dan footer dari setiap halaman
 
+### commit kesepuluh
+finalisasi dan dionlinekan [disini](https://finalproject.sandarscout.com/)
+
 ## include
 1. nodejs
 2. expressjs
