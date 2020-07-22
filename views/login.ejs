@@ -1,0 +1,47 @@
+<html>
+    <%- include('header'); -%>
+          <div class="jumbotron jumbotron-fluid height100p banner-menu" style="background: url(https://mulaitech.com/finalproject/images/jumbotron-staff.jpg);">
+            <div class="container h100">
+              <div class="contentBox h100">
+                <div>
+                  <h3 class="text-color-white"><strong>Welcome Admin</strong></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="offset-sm-2 col-sm-8">
+                    <div class="headerText text-center">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="container">
+                        <form action="/auth" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Krisna Prihadiyanto" name="nama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="18112435" name="nim" required>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="submit">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>   
+    </section>
+    <%- include('footer'); -%>

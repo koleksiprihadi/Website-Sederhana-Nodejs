@@ -10,9 +10,9 @@ var public = __dirname + "/public/";
 
 var connection=mysql.createConnection({
     host:'localhost',
-    user:'root',
-    password:'',
-    database:'restaurant'
+    user:'sandarsc_krisna',
+    password:'FinalProjectSMT4',
+    database:'sandarsc_restaurant'
 });
 
 connection.connect(function(error){
@@ -44,6 +44,30 @@ app.get('/staff',(req, res) => {
         title : 'Staff'     
     });
 });
+//menampilkan menu reservasi
+app.get('/reservasi',(req, res) => {
+    res.render('reservasi', { 
+        title : 'Reservasi'      
+    });
+});
+// menampilkan halaman thanks
+app.get('/thanks',(req, res) => {
+    res.render('thanks', {       
+    });
+});
+//menampilkan halaman karyawan
+app.get('/karyawan',(req, res) => {
+    let sql = "SELECT * FROM staff";
+    let query = connection.query(sql, (err, rows) => {
+        if(err) throw err;
+        res.render('karyawan', {
+            user : rows
+            
+        });
+    });
+});
+
+
 app.get('/krisna-prihadiyanto',(req, res) => {
     const userId = '18112435';
     let sql = `Select * from staff where nim = ${userId}`;
@@ -110,40 +134,7 @@ app.get('/ikram-ihamadi-ferdinan',(req, res) => {
         });
     });
 });
-//menampilkan menu reservasi
-app.get('/reservasi',(req, res) => {
-    res.render('reservasi', { 
-        title : 'Reservasi'      
-    });
-});
-// menampilkan halaman thanks
-app.get('/thanks',(req, res) => {
-    res.render('thanks', {       
-    });
-});
-//menampilkan halaman karyawan
-app.get('/karyawan',(req, res) => {
-    let sql = "SELECT * FROM staff";
-    let query = connection.query(sql, (err, rows) => {
-        if(err) throw err;
-        res.render('karyawan', {
-            user : rows
-            
-        });
-    });
-});
 
-app.get('/admin',(req, res) => {
-    // res.send('CRUD Operation using NodeJS / ExpressJS / MySQL');
-    let sql = "SELECT * FROM reservasi";
-    let query = connection.query(sql, (err, rows) => {
-        if(err) throw err;
-        res.render('admin', {
-            reservasi : rows
-            
-        });
-    });
-});
 
 
 //CD
@@ -184,6 +175,64 @@ app.post('/update',(req, res) => {
       if(err) throw err;
       res.redirect('/karyawan');
     });
+});
+
+// Login
+app.get('/login',(req, res) => {
+    res.render('login', {  
+        title : 'login'     
+    });
+});
+
+
+  app.get('/admin-login', (req, res) => {
+    // res.send('CRUD Operation using NodeJS / ExpressJS / MySQL');
+	let sql = "SELECT * FROM reservasi";
+    let query = connection.query(sql, (err, rows) => {
+        if(err) throw err;
+        
+        res.render('admin', {
+            reservasi : rows
+            
+        });
+    });
+    
+});
+
+//auth
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+app.post('/auth', function(req, res) {
+	var nama = req.body.nama;
+	var nim = req.body.nim;
+	if (nama && nim) {
+		connection.query('SELECT * FROM staff WHERE nama = ? AND nim = ?', [nama, nim], function(error, results, fields) {
+			if (results.length > 0) {
+				req.session.loggedin = true;
+				req.session.nama = nama;
+				res.redirect('/admin');
+			} else {
+				res.redirect('/login');
+			}			
+			
+		});
+	} else {
+		res.redirect('/login');
+	}
+});
+
+app.get('/admin', function(req, res) {
+	if (req.session.loggedin == true) {
+		res.redirect('/admin-login');
+	} else {
+		res.redirect('/login');
+	}
+	res.end();
 });
 
 
